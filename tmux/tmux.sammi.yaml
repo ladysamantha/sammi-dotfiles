@@ -1,0 +1,8 @@
+session_name: tmux_session_${USER}
+windows:
+  - window_name: "${USER}'s tmux"
+    layout: main-vertical
+    panes:
+      - ''
+      - ''
+      - ''
