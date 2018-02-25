@@ -3,6 +3,6 @@ windows:
   - window_name: "${USER}'s tmux"
     layout: main-vertical
     panes:
-      - ''
-      - ''
-      - ''
+      - focus: true
+      - pane
+      - pane
