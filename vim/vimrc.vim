@@ -68,6 +68,14 @@ let g:ale_completion_enabled = 1
 nmap <leader>w :w!<cr>
 nmap <leader>q :q!<cr>
 
+" Tab navigation like Firefox.
+nnoremap <leader>h :tabprevious<CR>
+nnoremap <leader>l   :tabnext<CR>
+nnoremap <leader>t     :tabnew<CR>
+inoremap <c-S-tab> <Esc>:tabprevious<CR>i
+inoremap <c-tab>   <Esc>:tabnext<CR>i
+inoremap <c-t>     <Esc>:tabnew<CR>
+
 " Should only be used when editing the Vim config
 nmap <leader>ws :w!<cr> :source %<cr>
 

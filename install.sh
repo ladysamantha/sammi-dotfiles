@@ -2,7 +2,6 @@
 
 NVIM=$(command -v nvim)
 TMUX=$(command -v tmux)
-VIM=$(command -v vim)
 
 if [[ -x $TMUX ]]; then
     source ./init/tmux.sh
@@ -12,7 +11,11 @@ if [[ -x $NVIM ]]; then
     source ./init/nvim.sh
 fi
 
-if [[ -x $VIM ]]; then
-    source ./init/vim.sh
-fi
+# Vim config
+command -v vim >/dev/null 2>&1 || {
+    echo "Some vim is not installed"
+    exit 1
+}
+
+source ./init/vim.sh
 
