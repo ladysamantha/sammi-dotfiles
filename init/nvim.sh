@@ -1,9 +1,10 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-NVIM_CONF=$HOME/.config/nvim
+ROOT_DIR="$( cd .. && pwd )"
+NVIM_CONF="$HOME/.config/nvim"
 
 mkdir -p $NVIM_CONF
 
-if ! [ -f $NVIM_CONF/init.conf ] ; then 
-    ln -s $NVIM_CONF/init.vim ../nvim/init.vim
+if [[ ! -f $NVIM_CONF/init.vim ]] ; then 
+    ln -s $ROOT_DIR/nvim/init.vim $NVIM_CONF/init.vim
 fi
