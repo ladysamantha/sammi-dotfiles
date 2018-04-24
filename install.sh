@@ -19,3 +19,8 @@ command -v vim >/dev/null 2>&1 || {
 
 source ./init/vim.sh
 
+for $file in $(find $(pwd)scripts -type f -iname '*.zsh' 2>/dev/null)
+do
+    ln -s $file "$ZSH_CUSTOM/$(basename $file)"
+done
+
