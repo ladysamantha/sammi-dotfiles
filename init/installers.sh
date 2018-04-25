@@ -11,6 +11,7 @@ then
     echo "Error installing nvm \uf119"
     [ -v EXIT_ON_ERROR ] && exit 1
 else
+    "\uf898 Installing NodeJS"
     nvm install --lts || exit 1
     nvm use --lts || exit 1
     wget -qO- https://yarnpkg.com/install.sh | bash
@@ -47,9 +48,21 @@ stack --version >/dev/null 2>&1 || {
 
 # Docker
 command -v docker >/dev/null 2>&1 || {
-    echo "Installing docker \uf308"
+    echo "\uf308 Installing docker"
     curl -fsSL get.docker.com | bash
     sudo usermod -aG docker $USER
     echo "!!! Logout and log back in to use docker without using 'sudo' !!!"
+}
+
+# Rust
+
+command -v rustup >/dev/null 2>&1 || {
+    echo "\ue7a8 Installing rust(up)"
+    curl https://sh.rustup.rs -sSf | sh
+}
+
+command -v cargo >/dev/null 2>&1 || {
+    echo "cargo failed to install properly \uf004"
+    [ -v EXIT_ON_ERROR ] && exit 1
 }
 

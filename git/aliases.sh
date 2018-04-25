@@ -17,3 +17,4 @@ git config --global alias.dc 'diff --cached'
 git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all"
 git config --global alias.last 'log -1 --stat'
 git config --global alias.unstage 'reset HEAD --'
+git config --global alias.up 'push'
