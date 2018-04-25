@@ -62,7 +62,7 @@ command -v rustup >/dev/null 2>&1 || {
 }
 
 command -v cargo >/dev/null 2>&1 || {
-    echo "cargo failed to install properly \uf004"
+    echo "cargo failed to install properly \uf119"
     [ -v EXIT_ON_ERROR ] && exit 1
 }
 
