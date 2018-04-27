@@ -88,7 +88,7 @@ POWERLEVEL9K_PUBLIC_IP_BACKGROUND="gray"
 POWERLEVEL9K_DOCKER_FOREGROUND="039"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
