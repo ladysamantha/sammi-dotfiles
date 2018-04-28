@@ -1,5 +1,7 @@
 #!/bin/bash
 
+exec ./deps.sh
+
 NVIM=$(command -v nvim)
 TMUX=$(command -v tmux)
 
