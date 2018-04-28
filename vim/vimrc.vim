@@ -85,6 +85,8 @@ nmap <leader>pi :PlugInstall<cr>
 " NERDTree
 nmap <leader>nt :NERDTreeToggle<cr>
 
+let NERDTreeShowHidden=1
+
 let $LANG='en'
 set langmenu=en
 source $VIMRUNTIME/delmenu.vim

@@ -86,6 +86,8 @@ POWERLEVEL9K_OS_ICON_FOREGROUND="039"
 POWERLEVEL9K_PUBLIC_IP_FOREGROUND="197"
 POWERLEVEL9K_PUBLIC_IP_BACKGROUND="gray"
 POWERLEVEL9K_DOCKER_FOREGROUND="039"
+POWERLEVEL9K_NVM_BACKGROUND="gray"
+POWERLEVEL9K_NVM_FOREGROUND="green"
 
 # Uncomment the following line to enable command auto-correction.
 #ENABLE_CORRECTION="true"
@@ -96,6 +98,8 @@ POWERLEVEL9K_DOCKER_FOREGROUND="039"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  nvm
+  node
 )
 
 source $ZSH/oh-my-zsh.sh
