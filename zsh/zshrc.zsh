@@ -46,7 +46,7 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(pawprint user nvm node_version dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(pawprint user nvm dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 
 # Separators
@@ -118,3 +118,6 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     export PATH='/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin':"$PATH"
 fi
+
+# added by travis gem
+[ -f /home/senders/.travis/travis.sh ] && source /home/senders/.travis/travis.sh

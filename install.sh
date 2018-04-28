@@ -19,8 +19,17 @@ command -v vim >/dev/null 2>&1 || {
 
 source ./init/vim.sh
 
-for $file in $(find $(pwd)scripts -type f -iname '*.zsh' 2>/dev/null)
+echo "Running init scripts"
+
+for file in $(find $(pwd)/init -type -iname '*.*sh')
 do
-    ln -s $file "$ZSH_CUSTOM/$(basename $file)"
+    echo "running script: ${file}"
+    [ -x "${file}"] && exec "${file}"
+done
+
+echo "Symlinking files to \$ZSH_CUSTOM"
+for file in $(find $(pwd)/scripts -type f -iname '*.zsh' 2>/dev/null)
+do
+    ln -s "${file}" "$ZSH_CUSTOM/$(basename $file)"
 done
 
