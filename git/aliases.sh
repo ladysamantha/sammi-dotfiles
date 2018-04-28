@@ -18,3 +18,4 @@ git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(ye
 git config --global alias.last 'log -1 --stat'
 git config --global alias.unstage 'reset HEAD --'
 git config --global alias.up 'push'
+git config --global alias.aliases 'config --global --get-regexp alias'
