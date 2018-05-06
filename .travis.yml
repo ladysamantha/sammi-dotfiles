@@ -11,8 +11,8 @@ before_script:
   - shellcheck **/*.sh
 script:
   - ./install.sh
-# TODO: add after_script
-#
+after_script:
+  - ./scripts/travis/after_script.sh
 
 notifications:
   email: false
