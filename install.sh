@@ -9,21 +9,21 @@ command -v vim >/dev/null 2>&1 || {
 }
 
 echo "configuring zsh"
-./init/zsh.sh
+./zsh/init.sh
 
 # tmux config
-[[ -f "./init/tmux" && -x "./init/tmux.sh" ]] && {
+[[ -f "./tmux/init.sh" && -x "./tmux/init.sh" ]] && {
     echo "configuring tmux"
     ./init/tmux.sh
 } 
 
 # neovim config
 echo "configuring neovim"
-./init/nvim.sh
+./nvim/init.sh
 
 # now configure vim
 echo "configuring vim"
-./init/vim.sh
+./vim/init.sh
 
 if [[ -z ${SCRIPTS_ONLY+undef} ]]; then
     echo "Running init scripts"
