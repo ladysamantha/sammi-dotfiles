@@ -10,6 +10,9 @@ addons:
     packages:
       - jq
       - shellcheck
+before_install:
+  - '[[ "$TRAVIS_OS_NAME" == "osx" ]] && brew update'
+  - '[[ "$TRAVIS_OS_NAME" == "osx" ]] && brew install jq shellcheck'
 before_script:
   - shellcheck **/*.sh
 script:
