@@ -1,22 +1,22 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 # NVM, Node, and Yarn
 command -v nvm >/dev/null 2>&1 || {
-    "\uf898 Installing the Node Version Manger (NVM)"
+    "\\uf898 Installing the Node Version Manger (NVM)"
     wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.9/install.sh | bash
 }
 
-if [ ! $(command -v nvm >/dev/null 2>&1) ]
+if [ ! "$(command -v nvm >/dev/null 2>&1)" ]
 then
-    echo "Error installing nvm \uf119"
+    echo "Error installing nvm \\uf119"
     [ -v EXIT_ON_ERROR ] && exit 1
 else
-    "\uf898 Installing NodeJS"
+    "\\uf898 Installing NodeJS"
     nvm install --lts || exit 1
     nvm use --lts || exit 1
     wget -qO- https://yarnpkg.com/install.sh | bash
     command -v yarn >/dev/null 2>&1 || {
-        echo "Error installing yarn \uf119"
+        echo "Error installing yarn \\uf119"
         [ -v EXIT_ON_ERROR ] && exit 1
     }
 
@@ -25,10 +25,10 @@ else
     if [ -v PREFER_NPM ]
     then
         command -v npm >/dev/null 2>&1 || {
-            echo "npm is not installed \uf7d3"
+            echo "npm is not installed \\uf7d3"
             exit 1
         }
-        echo "You should really be using yarn \uf004"
+        echo "You should really be using yarn \\uf004"
         npm install -g eslint typescript tslint rimraf
     else
         yarn global add eslint typescript tslint rimraf
@@ -37,32 +37,32 @@ fi
 
 # Stack
 command -v stack >/dev/null 2>&1 || {
-    echo "\ue61f Installing the Haskell stack toolchain"
+    echo "\\ue61f Installing the Haskell stack toolchain"
     wget -qO- https://get.haskellstack.org/ | sh
 }
 
 stack --version >/dev/null 2>&1 || {
-    echo "Error installing stack \uf119"
+    echo "Error installing stack \\uf119"
     [ -v EXIT_ON_ERROR ] && exit 1
 }
 
 # Docker
 command -v docker >/dev/null 2>&1 || {
-    echo "\uf308 Installing docker"
+    echo "\\uf308 Installing docker"
     curl -fsSL get.docker.com | bash
-    sudo usermod -aG docker $USER
+    sudo usermod -aG docker "$USER"
     echo "!!! Logout and log back in to use docker without using 'sudo' !!!"
 }
 
 # Rust
 
 command -v rustup >/dev/null 2>&1 || {
-    echo "\ue7a8 Installing rust(up)"
+    echo "\\ue7a8 Installing rust(up)"
     curl https://sh.rustup.rs -sSf | sh
 }
 
 command -v cargo >/dev/null 2>&1 || {
-    echo "cargo failed to install properly \uf119"
+    echo "cargo failed to install properly \\uf119"
     [ -v EXIT_ON_ERROR ] && exit 1
 }
 

@@ -55,6 +55,7 @@ let g:mapleader = ","
 
 " Ale configuration
 let g:ale_linters = {
+\  'bash': ['shellcheck'],
 \  'rust': ['cargo'],
 \  'javascript': ['eslint'],
 \  'haskell': ['brittany', 'stack-build'],
@@ -62,11 +63,16 @@ let g:ale_linters = {
 \  'yaml': ['yamllint']
 \}
 
+let g:ale_fixers = {
+\ 'typescript': ['tslint'],
+\ 'javascript': ['eslint'],
+\}
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 
 nmap <leader>w :w!<cr>
 nmap <leader>q :q!<cr>
+nmap <leader>wq :wq!<cr>
 
 " Tab navigation like Firefox.
 nnoremap <leader>h :tabprevious<CR>

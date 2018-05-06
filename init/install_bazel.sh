@@ -25,7 +25,8 @@ BAZEL_SHA_FILE="${BAZEL_FILE}.sha256"
 BAZEL_URL="https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VER}/${BAZEL_FILE}"
 BAZEL_SHA_URL="${BAZEL_URL}.sha256"
 
-pushd /tmp >/dev/null
+_DIR=$(pwd)
+cd /tmp >/dev/null || (echo "Failed to cd to /tmp" && exit 255)
 
 curl -sSL "${BAZEL_URL}" > "${BAZEL_FILE}"
 curl -sSL "${BAZEL_SHA_URL}" > "${BAZEL_SHA_FILE}"
@@ -38,8 +39,8 @@ sha256sum -c "${BAZEL_URL}" >/dev/null 2>&1 || {
 bash "${BAZEL_FILE}" --user
 rm "${BAZEL_FILE}" "${BAZEL_SHA_FILE}"
 
-popd
+cd "$_DIR" || (echo "Failed to cd back to ${_DIR}" && exit 255)
 
 unset $_OS
-unset $_UNAME
+unset "$_UNAME"
 

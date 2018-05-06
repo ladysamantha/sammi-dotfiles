@@ -1,0 +1,15 @@
+---
+language: bash
+addons:
+  apt:
+    sources:
+      - sourceline: 'ppa:neovim-ppa/stable'
+    packages:
+      - jq
+      - shellcheck
+      - neovim
+before_script:
+  - shellcheck **/*.sh
+script:
+  - ./install.sh
+# TODO: add after_script

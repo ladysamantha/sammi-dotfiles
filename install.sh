@@ -1,17 +1,14 @@
 #!/bin/bash
 
-exec ./deps.sh
+./deps.sh
 
-NVIM=$(command -v nvim)
-TMUX=$(command -v tmux)
+command -v nvim >/dev/null 2>&1 && {
+    ./init/tmux.sh
+}
 
-if [[ -x $TMUX ]]; then
-    source ./init/tmux.sh
-fi
-
-if [[ -x $NVIM ]]; then
-    source ./init/nvim.sh
-fi
+command -v tmux >/dev/null 2>&1 && {
+    ./init/nvim.sh
+}
 
 # Vim config
 command -v vim >/dev/null 2>&1 || {
@@ -19,19 +16,12 @@ command -v vim >/dev/null 2>&1 || {
     exit 1
 }
 
-source ./init/vim.sh
+./init/vim.sh
 
 echo "Running init scripts"
 
-for file in $(find $(pwd)/init -type -iname '*.*sh')
-do
-    echo "running script: ${file}"
-    [ -x "${file}"] && exec "${file}"
-done
+find "$(pwd)/init" -type f -iname '*.*sh' -exec {} \;
 
 echo "Symlinking files to \$ZSH_CUSTOM"
-for file in $(find $(pwd)/scripts -type f -iname '*.zsh' 2>/dev/null)
-do
-    ln -s "${file}" "$ZSH_CUSTOM/$(basename $file)"
-done
 
+find "$(pwd)/scripts" -type f -iname '*.zsh' 2>/dev/null -exec ln -s {} "$ZSH_CUSTOM/$(basename {})" \;
