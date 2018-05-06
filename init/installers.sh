@@ -11,11 +11,13 @@ command -v nvm >/dev/null 2>&1 || {
 }
 fi
 
-if [ ! "$(command -v nvm >/dev/null 2>&1)" ]
-then
+command -v nvm >/dev/null 2>&1 || {
     echo "Error installing nvm \\uf119"
     [ -v EXIT_ON_ERROR ] && exit 1
-else
+}
+
+if [[ -v CI && "$CI" == "0" ]]
+then
     "\\uf898 Installing NodeJS and yarn"
     nvm install --lts || exit 1
     nvm use --lts || exit 1
@@ -41,7 +43,6 @@ else
 fi
 
 # Haskell Stack
-
 if [[ -v INSTALL_STACK ]]
 then
 command -v stack >/dev/null 2>&1 || {
@@ -56,8 +57,7 @@ stack --version >/dev/null 2>&1 || {
 fi
 
 # Docker
-
-if [[ ! -v TRAVIS ]]
+if [[ ! -v CI ]]
 then
 command -v docker >/dev/null 2>&1 || {
     echo "\\uf308 Installing docker"
@@ -68,7 +68,7 @@ command -v docker >/dev/null 2>&1 || {
 fi
 
 # Rust
-if [[ ! -v TRAVIS ]]
+if [[ ! -v CI ]]
 then
 command -v rustup >/dev/null 2>&1 || {
     echo "\\ue7a8 Installing rust(up)"
