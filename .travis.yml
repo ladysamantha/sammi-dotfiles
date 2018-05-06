@@ -13,3 +13,7 @@ before_script:
 script:
   - ./install.sh
 # TODO: add after_script
+#
+
+notifications:
+  email: false
