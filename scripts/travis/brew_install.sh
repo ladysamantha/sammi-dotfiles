@@ -2,4 +2,4 @@
 
 brew update
 
-brew install jq shellcheck sha256sum
+brew install jq shellcheck coreutils
