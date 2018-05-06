@@ -11,7 +11,6 @@ before_script:
   - shellcheck **/*.sh
 script:
   - ./install.sh
-after_script:
   - ./scripts/travis/after_script.sh
 
 notifications:
