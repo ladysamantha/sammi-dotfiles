@@ -1,5 +1,7 @@
 ---
 language: bash
+env:
+  - SCRIPTS_ONLY=1
 addons:
   apt:
     packages:
