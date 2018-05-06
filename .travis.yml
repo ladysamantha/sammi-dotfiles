@@ -2,8 +2,6 @@
 language: bash
 addons:
   apt:
-    sources:
-      - sourceline: 'ppa:neovim-ppa/stable'
     packages:
       - jq
       - shellcheck

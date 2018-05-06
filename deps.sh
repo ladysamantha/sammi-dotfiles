@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DEPS=( brew curl jq )
+DEPS=( git curl jq )
 
 assert_exists()
 {
