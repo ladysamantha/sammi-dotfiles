@@ -26,6 +26,9 @@ pushd /tmp || (echo "Failed to cd to /tmp" && exit 255)
 curl -sSL "${BAZEL_URL}" > "${BAZEL_FILE}"
 curl -sSL "${BAZEL_SHA_URL}" > "${BAZEL_SHA_FILE}"
 
+cat "$BAZEL_FILE"
+cat "$BAZEL_SHA_FILE"
+
 sha256sum -c "${BAZEL_URL}" >/dev/null 2>&1 || {
     echo "ERROR: sha256 checksum for '${BAZEL_FILE}' failed"
     exit 1
