@@ -1,5 +1,8 @@
 ---
 language: bash
+os:
+  - osx
+  - ubuntu
 env:
   - SCRIPTS_ONLY=1
 addons:
