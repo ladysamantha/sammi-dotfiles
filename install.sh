@@ -8,6 +8,9 @@ command -v vim >/dev/null 2>&1 || {
     exit 1
 }
 
+echo "configuring zsh"
+./init/zsh.sh
+
 # tmux config
 [[ -f "./init/tmux" && -x "./init/tmux.sh" ]] && {
     echo "configuring tmux"
