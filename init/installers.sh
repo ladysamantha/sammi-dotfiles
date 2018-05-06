@@ -3,18 +3,18 @@
 # NVM, Node, and Yarn
 
 # travis already has nvm
-if [[ ! -v TRAVIS ]]
+if [[ "$CI" == "0" ]]
 then
 command -v nvm >/dev/null 2>&1 || {
     "\\uf898 Installing the Node Version Manger (NVM)"
     wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.9/install.sh | bash
 }
-fi
 
 command -v nvm >/dev/null 2>&1 || {
     echo "Error installing nvm \\uf119"
     [ -v EXIT_ON_ERROR ] && exit 1
 }
+fi
 
 if [[ -v CI && "$CI" == "0" ]]
 then

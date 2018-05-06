@@ -6,6 +6,7 @@ os:
 env:
   - SCRIPTS_ONLY=1
   - SCRIPTS_ONLY=0
+  - EXIT_ON_ERROR=1
 addons:
   apt:
     packages:
