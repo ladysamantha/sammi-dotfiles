@@ -29,7 +29,7 @@ curl -sSL "${BAZEL_SHA_URL}" > "${BAZEL_SHA_FILE}"
 ls -lHa
 cat "$BAZEL_SHA_FILE"
 
-sha256sum -c "${BAZEL_URL}"
+sha256sum -c "${BAZEL_FILE}"
 
 bash "${BAZEL_FILE}" --user
 rm "${BAZEL_FILE}" "${BAZEL_SHA_FILE}"
