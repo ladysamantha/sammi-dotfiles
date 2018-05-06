@@ -28,9 +28,9 @@ echo "configuring vim"
 if [[ -z ${SCRIPTS_ONLY+undef} ]]; then
     echo "Running init scripts"
 
-    find "$(pwd)/init" -type f -iname '*.*sh' -exec {} \;
+    find "$(pwd)/init" -maxdepth 1 -type f -iname '*.*sh' -exec {} \;
 
     echo "Symlinking files to \$ZSH_CUSTOM"
 
-    find "$(pwd)/scripts" -type f -iname '*.zsh' 2>/dev/null -exec ln -s {} "$ZSH_CUSTOM/$(basename {})" \;
+    find "$(pwd)/scripts" -maxdepth 1 -type f -iname '*.zsh' 2>/dev/null -exec ln -s {} "$ZSH_CUSTOM/$(basename {})" \;
 fi
