@@ -28,7 +28,11 @@ echo "configuring vim"
 if [[ "$SCRIPTS_ONLY" == "0" ]]; then
     echo "Running init scripts"
 
-    find "$(pwd)/init" -maxdepth 1 -type f -iname '*.*sh' -exec {} \;
+    echo "Installing Bazel"
+    ./init/install_bazel.sh || exit 1
+
+    echo "Other installers"
+    ./init/installers.sh || exit 1
 
     echo "Symlinking files to \$ZSH_CUSTOM"
 
