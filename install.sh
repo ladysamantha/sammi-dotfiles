@@ -25,7 +25,7 @@ echo "configuring neovim"
 echo "configuring vim"
 ./vim/init.sh
 
-if [[ -z ${SCRIPTS_ONLY+undef} ]]; then
+if [[ "$SCRIPTS_ONLY" == "0" ]]; then
     echo "Running init scripts"
 
     find "$(pwd)/init" -maxdepth 1 -type f -iname '*.*sh' -exec {} \;

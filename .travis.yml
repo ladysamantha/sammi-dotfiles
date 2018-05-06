@@ -5,6 +5,7 @@ os:
   - linux
 env:
   - SCRIPTS_ONLY=1
+  - SCRIPTS_ONLY=0
 addons:
   apt:
     packages:
