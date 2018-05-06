@@ -22,7 +22,7 @@ echo "configuring neovim"
 echo "configuring vim"
 ./init/vim.sh
 
-if [[ ! -d "$SCRIPTS_ONLY" ]]; then
+if [[ -z ${SCRIPTS_ONLY+undef} ]]; then
     echo "Running init scripts"
 
     find "$(pwd)/init" -type f -iname '*.*sh' -exec {} \;
