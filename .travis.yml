@@ -5,7 +5,6 @@ addons:
     packages:
       - jq
       - shellcheck
-      - neovim
 before_script:
   - shellcheck **/*.sh
 script:
