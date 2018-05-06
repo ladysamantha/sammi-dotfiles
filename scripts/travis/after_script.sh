@@ -8,7 +8,7 @@ ls -lHa "$HOME/.config/nvim"
     exit 1
 }
 
-[[ -f "$HOME/.config/nvim/init.vim" ]] || {
+[[ -e "$HOME/.config/nvim/init.vim" ]] || {
     # shellcheck disable=SC2088
     echo '~/.config/nvim/init.vim is not set (or not a file)' 1>&2
     exit 1
@@ -16,13 +16,13 @@ ls -lHa "$HOME/.config/nvim"
 
 ls -lHa "$HOME"
 
-[[ -f "$HOME/.vimrc" ]] || { 
+[[ -e "$HOME/.vimrc" ]] || { 
     # shellcheck disable=SC2088
     echo '~/.vimrc is not set (or not a file)' 1>&2
     exit 1
 }
 
-[[ -f "$HOME/.zshrc" ]] || {
+[[ -e "$HOME/.zshrc" ]] || {
     # shellcheck disable=SC2088
     echo '~/.zshrc is not set (or not a file)' 1>&2
     exit 1
