@@ -2,7 +2,7 @@
 language: bash
 os:
   - osx
-  - ubuntu
+  - linux
 env:
   - SCRIPTS_ONLY=1
 addons:
@@ -11,8 +11,8 @@ addons:
       - jq
       - shellcheck
 before_install:
-  - '[[ "$TRAVIS_OS_NAME" == "osx" ]] && brew update'
-  - '[[ "$TRAVIS_OS_NAME" == "osx" ]] && brew install jq shellcheck'
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install jq shellcheck; fi
 before_script:
   - shellcheck **/*.sh
 script:
