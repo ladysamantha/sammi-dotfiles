@@ -26,7 +26,9 @@ pushd /tmp || (echo "Failed to cd to /tmp" && exit 255)
 curl -sSL "${BAZEL_URL}" > "${BAZEL_FILE}"
 curl -sSL "${BAZEL_SHA_URL}" > "${BAZEL_SHA_FILE}"
 
-sha256sum -c "${BAZEL_SHA_FILE}"
+command -v sha256sum >/dev/null 2>&1 && {
+    sha256sum -c "${BAZEL_SHA_FILE}"
+}
 
 bash "${BAZEL_FILE}" --user
 rm "${BAZEL_FILE}" "${BAZEL_SHA_FILE}"

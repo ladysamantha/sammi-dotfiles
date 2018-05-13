@@ -17,5 +17,5 @@ do
     assert_exists "${dep}"
 done
 
-DEPS_RUN=$(/bin/true)
+DEPS_RUN=1
 export DEPS_RUN
