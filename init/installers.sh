@@ -43,7 +43,7 @@ then
 fi
 
 # Haskell Stack
-if [[ -v INSTALL_STACK ]]
+if [[ "$INSTALL_STACK" == "1" ]]
 then
 command -v stack >/dev/null 2>&1 || {
     echo "\\ue61f Installing the Haskell stack toolchain"
@@ -57,7 +57,7 @@ stack --version >/dev/null 2>&1 || {
 fi
 
 # Docker
-if [[ ! -v CI ]]
+if [[ ! "$CI" == "1" ]]
 then
 command -v docker >/dev/null 2>&1 || {
     echo "\\uf308 Installing docker"
@@ -68,7 +68,7 @@ command -v docker >/dev/null 2>&1 || {
 fi
 
 # Rust
-if [[ ! -v CI ]]
+if [[ ! "$CI" == "1" ]]
 then
 command -v rustup >/dev/null 2>&1 || {
     echo "\\ue7a8 Installing rust(up)"
