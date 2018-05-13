@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ROOT_DIR="$( cd .. && pwd )"
+ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 NVIM_CONF="$HOME/.config/nvim"
 
 mkdir -p "$NVIM_CONF"

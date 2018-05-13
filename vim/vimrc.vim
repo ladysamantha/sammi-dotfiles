@@ -42,11 +42,17 @@ call plug#end()
 let g:airline_powerline_fonts=1
 let g:airline_theme='luna'
 
+" from amix/vimrc
 syntax on
 set number
 filetype plugin on
 filetype indent on
-colorscheme OceanicNext
+set autoread
+
+try
+    colorscheme OceanicNext
+catch
+endtry
 
 " key bindings
 " and other things ripped from amix/vimrc
@@ -67,6 +73,7 @@ let g:ale_fixers = {
 \ 'typescript': ['tslint'],
 \ 'javascript': ['eslint'],
 \}
+
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 
@@ -111,3 +118,55 @@ set ruler
 
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
+
+" Ignore case when searching
+set ignorecase
+
+" When searching try to be smart about cases
+set smartcase
+
+" Highlight search results
+set hlsearch
+
+" Makes search act like search in modern browsers
+set incsearch
+
+" Don't redraw while executing macros (good performance config)
+set lazyredraw
+
+" For regular expressions turn magic on
+set magic
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Files, backups and undo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
+
+" Use spaces instead of tabs
+set expandtab
+
+" Be smart when using tabs ;)
+set smarttab
+
+" 1 tab == 2 spaces
+set shiftwidth=2
+
+" Disable highlight when <leader><cr> is pressed
+map <silent> <leader><cr> :noh<cr>
+

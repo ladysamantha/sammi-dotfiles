@@ -2,4 +2,4 @@
 
 brew update
 
-brew install jq shellcheck coreutils
+brew install jq shellcheck
