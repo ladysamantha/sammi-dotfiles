@@ -16,7 +16,7 @@ command -v nvm >/dev/null 2>&1 || {
 }
 fi
 
-if [[ -v CI && "$CI" == "0" ]]
+if [[ "$CI" == "0" ]]
 then
     "\\uf898 Installing NodeJS and yarn"
     nvm install --lts || exit 1
