@@ -57,7 +57,7 @@ stack --version >/dev/null 2>&1 || {
 fi
 
 # Docker
-if [[ ! "$CI" == "1" ]]
+if [[ "$INSTALL_DOCKER" == "1" ]]
 then
 command -v docker >/dev/null 2>&1 || {
     echo "\\uf308 Installing docker"
@@ -68,7 +68,7 @@ command -v docker >/dev/null 2>&1 || {
 fi
 
 # Rust
-if [[ ! "$CI" == "1" ]]
+if [[ "$INSTALL_RUST" == "1" ]]
 then
 command -v rustup >/dev/null 2>&1 || {
     echo "\\ue7a8 Installing rust(up)"
