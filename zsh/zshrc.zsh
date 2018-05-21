@@ -100,6 +100,7 @@ plugins=(
   git
   nvm
   node
+  yarn
 )
 
 source $ZSH/oh-my-zsh.sh
