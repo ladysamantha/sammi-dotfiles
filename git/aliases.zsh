@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 command -v git >/dev/null 2>&1 || {
     echo "git is not installed or in your PATH"
