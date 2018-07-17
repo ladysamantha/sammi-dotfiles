@@ -66,6 +66,9 @@ plugins=(
   nvm
   node
   yarn
+  docker
+  rust
+  cargo
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -91,3 +94,12 @@ fi
 
 # added by travis gem
 [ -f "${HOME}/.travis/travis.sh" ] && source "${HOME}/.travis/travis.sh"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/tenders/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/tenders/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/tenders/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/tenders/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
+# added by travis gem
+[ -f /Users/tenders/.travis/travis.sh ] && source /Users/tenders/.travis/travis.sh

@@ -23,7 +23,10 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'leafgarland/typescript-vim'
+Plug 'othree/yajs.vim'
+Plug 'othree/es.next.syntax.vim'
 Plug 'mattn/emmet-vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Completion
 Plug 'w0rp/ale'
@@ -31,7 +34,7 @@ Plug 'w0rp/ale'
 " Airline/Powerline/"I'm just sitting here looking at pretty colors"
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'rafi/awesome-vim-colorschemes'
+Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'ryanoasis/vim-devicons'
 
 " Testing
@@ -50,7 +53,7 @@ filetype indent on
 set autoread
 
 try
-    colorscheme OceanicNext
+    color dracula
 catch
 endtry
 
@@ -66,7 +69,7 @@ let g:ale_linters = {
 \  'javascript': ['eslint'],
 \  'haskell': ['brittany', 'stack-build'],
 \  'typescript': ['tslint'],
-\  'yaml': ['yamllint']
+\  'go': ['gofmt', 'golint']
 \}
 
 let g:ale_fixers = {
